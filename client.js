@@ -16,6 +16,7 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: HVW')
   })
+
   //output server data client side event listen 
   conn.on('data', (data) => {
     console.log(data.toString());
