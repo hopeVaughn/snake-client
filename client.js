@@ -8,8 +8,15 @@ const connect = function() {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-
-  //output server data clientside
+  //event listener for client upon connecting to game server.
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+  })
+  //applys our name to the board
+  conn.on('connect', () => {
+    conn.write('Name: HVW')
+  })
+  //output server data client side event listen 
   conn.on('data', (data) => {
     console.log(data.toString());
     conn.end;
