@@ -5,6 +5,7 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
+
   if (key === 'w' || key === 'W') {
     connection.write('Move: up');
     console.log('Move: up');
@@ -20,6 +21,13 @@ const handleUserInput = function(key) {
   if (key === 'd' || key === 'D') {
     connection.write('Move: right');
     console.log(`Move: right`);
+  }
+
+  if (key === 'x' || key === 'X') {
+    connection.write('Say: eat my dust!')
+  }
+  if (key === 'z' || key === 'Z') {
+    connection.write('Say: I R BESTEST!!')
   }
 };
 
