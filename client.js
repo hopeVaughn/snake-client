@@ -1,5 +1,5 @@
 const net = require("net");
-const { IP, PORT } = require('./constants')
+const { IP, PORT } = require('./constants');
 // establishes a connection with the game server
 const connect = function() {
   const conn = net.createConnection({
@@ -12,13 +12,13 @@ const connect = function() {
   //event listener for client upon connecting to game server.
   conn.on('connect', () => {
     console.log('Successfully connected to game server');
-  })
+  });
   //applys our name to the board
   conn.on('connect', () => {
-    conn.write('Name: HVW')
-  })
+    conn.write('Name: HVW');
+  });
 
-  //output server data client side event listen 
+  //output server data client side event listen
   conn.on('data', (data) => {
     console.log(data.toString());
     conn.end;
@@ -29,4 +29,4 @@ const connect = function() {
 
 module.exports = {
   connect,
-}
+};

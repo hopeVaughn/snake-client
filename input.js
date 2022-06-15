@@ -24,10 +24,10 @@ const handleUserInput = function(key) {
   }
 
   if (key === 'x' || key === 'X') {
-    connection.write('Say: eat my dust!')
+    connection.write('Say: eat my dust!');
   }
   if (key === 'z' || key === 'Z') {
-    connection.write('Say: I R BESTEST!!')
+    connection.write('Say: I R BESTEST!!');
   }
 };
 
