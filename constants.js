@@ -15,6 +15,7 @@ const keyBinds = {
   x: 'Say: eat my dust',
   z: 'Say: I AM BESTEST'
 };
+
 module.exports = {
   IP,
   PORT,

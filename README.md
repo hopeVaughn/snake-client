@@ -23,5 +23,5 @@ Before you can run this client, you will need to be running the server side whic
 
 - client.js `creates a connection from the client-side application to the server hosting the game`
 - input.js `handles all input from client-side key board commands including cute hot-keyed shout outs`
-- constants.js `deconstructs IP and PORT information and exports it to the client.js`
+- constants.js `deconstructs IP and PORT information and key bind map. Exports it to the client.js`
 - play.js `main node file ran to interface with the snek game server.`
