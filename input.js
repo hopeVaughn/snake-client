@@ -1,4 +1,5 @@
 // setup interface to handle user input from stdinlet connection;
+const { keyBinds } = require('./constants');
 let connection;
 
 const handleUserInput = function(key) {
@@ -7,32 +8,13 @@ const handleUserInput = function(key) {
     process.exit();
   }
 
+  // movement keys and edge cases from constants.js map
+  if (!keyBinds[key]) {
+    return console.log(`Invalid entry`);
+  }
+  connection.write(keyBinds[key]);
+  console.log(keyBinds[key]);
 
-  // movement keys and edge cases
-  if (key === 'w' || key === 'W') {
-    connection.write('Move: up');
-    console.log('Move: up');
-  }
-  if (key === 's' || key === 'S') {
-    connection.write('Move: down');
-    console.log(`Move: down`);
-  }
-  if (key === 'a' || key === 'A') {
-    connection.write('Move: left');
-    console.log(`Move: left`);
-  }
-  if (key === 'd' || key === 'D') {
-    connection.write('Move: right');
-    console.log(`Move: right`);
-  }
-
-  // fun hotkeys that broadcast srver side text
-  if (key === 'x' || key === 'X') {
-    connection.write('Say: eat my dust!');
-  }
-  if (key === 'z' || key === 'Z') {
-    connection.write('Say: I R BESTEST!!');
-  }
 };
 
 
