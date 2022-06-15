@@ -2,10 +2,13 @@
 let connection;
 
 const handleUserInput = function(key) {
+  // escape command to exit the program
   if (key === '\u0003') {
     process.exit();
   }
 
+
+  // movement keys and edge cases
   if (key === 'w' || key === 'W') {
     connection.write('Move: up');
     console.log('Move: up');
@@ -23,6 +26,7 @@ const handleUserInput = function(key) {
     console.log(`Move: right`);
   }
 
+  // fun hotkeys that broadcast srver side text
   if (key === 'x' || key === 'X') {
     connection.write('Say: eat my dust!');
   }
@@ -30,6 +34,7 @@ const handleUserInput = function(key) {
     connection.write('Say: I R BESTEST!!');
   }
 };
+
 
 const setupInput = function(conn) {
   connection = conn;
